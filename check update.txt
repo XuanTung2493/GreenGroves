@@ -1,0 +1,14 @@
+about                                           -> ok
+blogs                                           -> ok đã xong 3 bài để fake
+pages:
+    - our team                                  -> ok
+    - feedback                                  -> ok
+làm thêm form login admin                       -> ok
+bổ sung bảng role trỏ vào user                  -> ok
+home                                            -> ok (lâm)
+contact                                         -> ok
+accessories                                     -> ok
+nghiệp vụ admin CRUD                            -> ok (lâm)
+- Công cụ và vật liệu: Danh sách công cụ, đất, phân bón, thuốc trừ sâu, và hạt giống.
+
+------------------------------------------

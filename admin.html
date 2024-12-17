@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--Hay phải chạy Maven Compile để layout.html mới có hiệu lực-->
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <title>Admin table</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+
+    <!-- Cài đặt thư viện jQuery Semantic UI -->
+    <link href="https://semantic-ui.com/dist/semantic.min.css" rel="stylesheet" />
+    <script src="https://semantic-ui.com/dist/semantic.min.js"></script>
+
+    <!-- Cài đặt thư viện jQuery Summernote độc lập, không phụ thuộc Bootstrap -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote-lite.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote-lite.js"></script>
+</head>
+
+<body class="pushable dimmable scrolling">
+    <!-- sibebar -->
+    <div class="ui inverted left vertical sidebar menu">
+        <a class="item" href="admin.html"> <i class="home icon"></i> Admin </a>
+        <a class="item" href="admin.html">
+            <i class="icon block layout"></i> Category
+        </a>
+        <a class="item" href="admin.html">
+            <i class="icon product hunt"></i> Product
+        </a>
+        <a class="item" href="admin.html"> <i class="icon amazon"></i> Author </a>
+        <a class="item" href="admin.html">
+            <i class="icon adversal"></i> Advertisement
+        </a>
+
+        <a class="item" href="admin.html"> <i class="icon chat"></i> Feedback </a>
+        <a class="item" href="admin.html"> <i class="icon smile"></i> Client </a>
+        <a class="item" href="admin.html"> <i class="icon tag"></i> Order </a>
+
+        <a class="item" href="admin.html"> <i class="icon user"></i> Staff </a>
+        <a class="item" href="admin.html">
+            <i class="icon wrench"></i> Settings
+        </a>
+    </div>
+
+    <div class="pusher">
+        <div class="ui bottom attached segment pushable">
+            <div class="pusher">
+                <div class="ui stackable menu">
+                    <a class="item header toggle button"> <i class="icon bars"></i> </a>
+
+                    <div class="menu right">
+                        <a class="item header"> Hello Admin </a>
+                        <a class="item header" href="index.html">
+                            <i class="icon sign-out"></i>Log Out
+                        </a>
+                    </div>
+                </div>
+
+                <div class="ui" style="padding: 2%">
+                    <!--nội dung riêng-->
+
+                    <div class="ui" style="padding: 2%">
+                        <div style="display: flex; background: none">
+                            <!-- <button class="ui button primary ">Nút</button> -->
+                            <div>
+                                <label for="modal-control" class="ui button modal-control">
+                                     <i class="icon plus circle"></i> Add &nbsp;
+                                </label>
+                            </div>
+                        </div>
+
+                        <table style="max-height: 100px width" class="ui table celled">
+                            <caption style="margin-bottom: 25px;">
+                                <h2>List Users</h2>
+                            </caption>
+                            <thead>
+                                <tr>
+                                    <th colspan="10">
+                                        <button class="ui blue button">Add</button>
+                                        <button class="ui green button">View</button>
+                                        <button class="ui red button">Delete</button>
+                                        <button class="ui orange button">Edit</button>
+
+                                        <div class="ui left icon input" style="float: right">
+                                            <input type="text" placeholder="Search users..." />
+                                            <i class="users icon"></i>
+                                        </div>
+                                    </th>
+                                </tr>
+                                <tr style="text-align: center">
+                                    <th>Id</th>
+                                    <th>Name</th>
+                                    <th>Country</th>
+                                    <th>Gender</th>
+                                    <th>Email</th>
+                                    <th>Registration Date</th>
+                                    <th>Role</th>
+                                    <th>Status</th>
+                                    <th>Image</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                <tr style="text-align: center">
+                                    <td>1</td>
+                                    <td>David Lam Thanh</td>
+                                    <td>VietNam</td>
+                                    <td>Male</td>
+                                    <td>davidlthanh@gmail.com</td>
+                                    <td>23rd March 2024</td>
+                                    <td>Admin</td>
+                                    <td class="positive">Active</td>
+                                    <td>
+                                        <img src="img/avatar-admin8.jpg" style="height: 50px" />
+                                    </td>
+
+                                    <td>
+                                        <a href="edit.html" class="ui button yellow"><i class="icon pencil"></i>Edit</a>
+                                        &nbsp;
+                                        <a href="delete.html" class="ui button red"><i class="icon trash"></i>Delete</a>
+                                        &nbsp;
+                                        <a href="view.html" class="ui button positive"><i
+                                                class="icon eye"></i>&nbsp;View</a>
+                                    </td>
+                                </tr>
+                                <!--mở vòng lặp for -->
+                                <tr style="text-align: center">
+                                    <td>2</td>
+                                    <td>Noah Liam</td>
+                                    <td>Japan</td>
+                                    <td>Female</td>
+                                    <td>noah.liam@gmail.com</td>
+                                    <td>14th February 2024</td>
+                                    <td>Editor</td>
+                                    <td class="negative">Inactive</td>
+                                    <td>
+                                        <img src="img/avatar-admin4.jpg" style="height: 50px" />
+                                    </td>
+
+                                    <td>
+                                        <a href="edit.html" class="ui button yellow"><i class="icon pencil"></i>Edit</a>
+                                        &nbsp;
+                                        <a href="delete.html" class="ui button red"><i class="icon trash"></i>Delete</a>
+                                        &nbsp;
+                                        <a href="view.html" class="ui button positive"><i
+                                                class="icon eye"></i>&nbsp;View</a>
+                                    </td>
+                                </tr>
+                                <!--mở vòng lặp for -->
+                                <tr style="text-align: center">
+                                    <td>3</td>
+                                    <td>Mason Oliver</td>
+                                    <td>France</td>
+                                    <td>Male</td>
+                                    <td>mason.oliver123@gmail.com</td>
+                                    <td>30th July 2024</td>
+                                    <td>Editor</td>
+                                    <td class="positive">Active</td>
+                                    <td>
+                                        <img src="img/avatar-admin1.jpg" style="height: 50px" />
+                                    </td>
+
+                                    <td>
+                                        <a href="edit.html" class="ui button yellow"><i class="icon pencil"></i>Edit</a>
+                                        &nbsp;
+                                        <a href="delete.html" class="ui button red"><i class="icon trash"></i>Delete</a>
+                                        &nbsp;
+                                        <a href="view.html" class="ui button positive"><i
+                                                class="icon eye"></i>&nbsp;View</a>
+                                    </td>
+                                </tr>
+                                <!-- đóng vòng lặp for -->
+                                <tr style="text-align: center">
+                                    <td>4</td>
+                                    <td>Jaxon Rowan</td>
+                                    <td>United States</td>
+                                    <td>Male</td>
+                                    <td>jaxon.rowan11@gmail.com</td>
+                                    <td>30th July 2024</td>
+                                    <td>Subscriber</td>
+                                    <td class="positive">Active</td>
+                                    <td>
+                                        <img src="img/avatar-admin2.jpg" style="height: 50px" />
+                                    </td>
+
+                                    <td>
+                                        <a href="edit.html" class="ui button yellow"><i class="icon pencil"></i>Edit</a>
+                                        &nbsp;
+                                        <a href="delete.html" class="ui button red"><i class="icon trash"></i>Delete</a>
+                                        &nbsp;
+                                        <a href="view.html" class="ui button positive"><i
+                                                class="icon eye"></i>&nbsp;View</a>
+                                    </td>
+                                </tr>
+                                <tr style="text-align: center">
+                                    <td>5</td>
+                                    <td>River Sky</td>
+                                    <td>Australia</td>
+                                    <td>Male</td>
+                                    <td>river.sky92@gmail.com</td>
+                                    <td>9th September 2024</td>
+                                    <td>Subscriber</td>
+                                    <td class="negative">Inactive</td>
+                                    <td>
+                                        <img src="img/avatar-admin.jpg" style="height: 50px" />
+                                    </td>
+
+                                    <td>
+                                        <a href="edit.html" class="ui button yellow"><i class="icon pencil"></i>Edit</a>
+                                        &nbsp;
+                                        <a href="delete.html" class="ui button red"><i class="icon trash"></i>Delete</a>
+                                        &nbsp;
+                                        <a href="view.html" class="ui button positive"><i
+                                                class="icon eye"></i>&nbsp;View</a>
+                                    </td>
+                                </tr>
+                                <tr style="text-align: center">
+                                    <td>6</td>
+                                    <td>Willow Poppy</td>
+                                    <td>Russia</td>
+                                    <td>Female</td>
+                                    <td>willow.poppy42@gmail.com</td>
+                                    <td>25th December 2024</td>
+                                    <td>Subscriber</td>
+                                    <td class="positive">Active</td>
+                                    <td>
+                                        <img src="img/avatar-admin6.jpg" style="height: 50px" />
+                                    </td>
+
+                                    <td>
+                                        <a href="edit.html" class="ui button yellow"><i class="icon pencil"></i>Edit</a>
+                                        &nbsp;
+                                        <a href="delete.html" class="ui button red"><i class="icon trash"></i>Delete</a>
+                                        &nbsp;
+                                        <a href="view.html" class="ui button positive"><i
+                                                class="icon eye"></i>&nbsp;View</a>
+                                    </td>
+                                </tr>
+                                <tr style="text-align: center">
+                                    <td>7</td>
+                                    <td>Elijah James</td>
+                                    <td>Brazin</td>
+                                    <td>Male</td>
+                                    <td>elijah.james24@gmail.com</td>
+                                    <td>7th April 2024</td>
+                                    <td>Security Manager</td>
+                                    <td class="positive">Active</td>
+                                    <td>
+                                        <img src="img/avatar-admin3.jpg" style="height: 50px" />
+                                    </td>
+
+                                    <td>
+                                        <a href="edit.html" class="ui button yellow"><i class="icon pencil"></i>Edit</a>
+                                        &nbsp;
+                                        <a href="delete.html" class="ui button red"><i class="icon trash"></i>Delete</a>
+                                        &nbsp;
+                                        <a href="view.html" class="ui button positive"><i
+                                                class="icon eye"></i>&nbsp;View</a>
+                                    </td>
+                                </tr>
+                                <tr style="text-align: center">
+                                    <td>8</td>
+                                    <td>Titan Zephyr</td>
+                                    <td>India</td>
+                                    <td>Male</td>
+                                    <td>titan.zephyr007@gmail.com</td>
+                                    <td>23rd March 2024</td>
+                                    <td>Subscriber</td>
+                                    <td class="positive">Active</td>
+                                    <td>
+                                        <img src="img/avatar-admin7.jpg" style="height: 50px" />
+                                    </td>
+
+                                    <td>
+                                        <a href="edit.html" class="ui button yellow"><i class="icon pencil"></i>Edit</a>
+                                        &nbsp;
+                                        <a href="delete.html" class="ui button red"><i class="icon trash"></i>Delete</a>
+                                        &nbsp;
+                                        <a href="view.html" class="ui button positive"><i
+                                                class="icon eye"></i>&nbsp;View</a>
+                                    </td>
+                                </tr>
+                                <tr style="text-align: center">
+                                    <td>9</td>
+                                    <td>Charlotte Scarlett</td>
+                                    <td>Germany</td>
+                                    <td>Female</td>
+                                    <td>charlotte.scarlett2024@gmail.com</td>
+                                    <td>19th August 2024</td>
+                                    <td>Subscriber</td>
+                                    <td class="negative">Inactive</td>
+                                    <td>
+                                        <img src="img/avatar-admin5.jpg" style="height: 50px" />
+                                    </td>
+
+                                    <td>
+                                        <a href="edit.html" class="ui button yellow"><i class="icon pencil"></i>Edit</a>
+                                        &nbsp;
+                                        <a href="delete.html" class="ui button red"><i class="icon trash"></i>Delete</a>
+                                        &nbsp;
+                                        <a href="view.html" class="ui button positive"><i
+                                                class="icon eye"></i>&nbsp;View</a>
+                                    </td>
+                                </tr>
+                            </tbody>
+
+                            <tfoot>
+                                <tr>
+                                    <th colspan="10">
+                                        <div class="ui right floated pagination menu">
+                                            <a class="icon item">
+                                                <i class="left chevron icon"></i>
+                                            </a>
+                                            <a class="item">1</a>
+                                            <a class="item">2</a>
+                                            <a class="item">3</a>
+                                            <a class="item">4</a>
+                                            <a class="icon item">
+                                                <i class="right chevron icon"></i>
+                                            </a>
+                                        </div>
+
+                                        <div class="ui left floated" style="float: left">
+                                            Page 3 of 16 (91 items) &nbsp; Page Size:
+                                            <div class="ui dropdown selection" tabindex="0">
+                                                <select>
+                                                    <option selected="selected">3</option>
+                                                    <option>5</option>
+                                                    <option>7</option>
+                                                </select><i class="dropdown icon"></i>
+                                                <div class="text">3</div>
+                                                <div class="menu" tabindex="-1">
+                                                    <div class="item active selected" data-value="3">
+                                                        3
+                                                    </div>
+                                                    <div class="item" data-value="5">5</div>
+                                                    <div class="item" data-value="7">7</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </th>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+
+                    <script>
+                        $(".modal-control").click(function () {
+                            // alert('Hello');
+
+                            $(".ui.modal").modal("show");
+                        });
+                    </script>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $(".ui.dropdown").dropdown();
+        $(".ui.sidebar").sidebar("attach events", ".toggle.button");
+
+        $(".message .close").on("click", function () {
+            $(this).closest(".message").transition("fade");
+        });
+    </script>
+
+    <div class="note-popover bottom note-link-popover" style="display: none">
+        <div class="note-popover-arrow"></div>
+        <div class="popover-content note-children-container">
+            <span><a target="_blank"></a>&nbsp;</span>
+            <div class="note-btn-group note-link">
+                <button type="button" class="note-btn" role="button" tabindex="-1" aria-label="Edit">
+                    <i class="note-icon-link"></i></button><button type="button" class="note-btn" role="button"
+                    tabindex="-1" aria-label="Unlink">
+                    <i class="note-icon-chain-broken"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="note-popover bottom note-image-popover" style="display: none">
+        <div class="note-popover-arrow"></div>
+        <div class="popover-content note-children-container">
+            <div class="note-btn-group note-resize">
+                <button type="button" class="note-btn" role="button" tabindex="-1" aria-label="Resize full">
+                    <span class="note-fontsize-10">100%</span></button><button type="button" class="note-btn"
+                    role="button" tabindex="-1" aria-label="Resize half">
+                    <span class="note-fontsize-10">50%</span></button><button type="button" class="note-btn"
+                    role="button" tabindex="-1" aria-label="Resize quarter">
+                    <span class="note-fontsize-10">25%</span></button><button type="button" class="note-btn"
+                    role="button" tabindex="-1" aria-label="Original size">
+                    <i class="note-icon-rollback"></i>
+                </button>
+            </div>
+            <div class="note-btn-group note-float">
+                <button type="button" class="note-btn" role="button" tabindex="-1" aria-label="Float Left">
+                    <i class="note-icon-float-left"></i></button><button type="button" class="note-btn" role="button"
+                    tabindex="-1" aria-label="Float Right">
+                    <i class="note-icon-float-right"></i></button><button type="button" class="note-btn" role="button"
+                    tabindex="-1" aria-label="Remove float">
+                    <i class="note-icon-rollback"></i>
+                </button>
+            </div>
+            <div class="note-btn-group note-remove">
+                <button type="button" class="note-btn" role="button" tabindex="-1" aria-label="Remove Image">
+                    <i class="note-icon-trash"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="note-popover bottom note-table-popover" style="display: none">
+        <div class="note-popover-arrow"></div>
+        <div class="popover-content note-children-container">
+            <div class="note-btn-group note-add">
+                <button type="button" class="note-btn btn-md" role="button" tabindex="-1" aria-label="Add row below">
+                    <i class="note-icon-row-below"></i></button><button type="button" class="note-btn btn-md"
+                    role="button" tabindex="-1" aria-label="Add row above">
+                    <i class="note-icon-row-above"></i></button><button type="button" class="note-btn btn-md"
+                    role="button" tabindex="-1" aria-label="Add column left">
+                    <i class="note-icon-col-before"></i></button><button type="button" class="note-btn btn-md"
+                    role="button" tabindex="-1" aria-label="Add column right">
+                    <i class="note-icon-col-after"></i>
+                </button>
+            </div>
+            <div class="note-btn-group note-delete">
+                <button type="button" class="note-btn btn-md" role="button" tabindex="-1" aria-label="Delete row">
+                    <i class="note-icon-row-remove"></i></button><button type="button" class="note-btn btn-md"
+                    role="button" tabindex="-1" aria-label="Delete column">
+                    <i class="note-icon-col-remove"></i></button><button type="button" class="note-btn btn-md"
+                    role="button" tabindex="-1" aria-label="Delete table">
+                    <i class="note-icon-trash"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+    <!-- Modal -->
+    <div class="ui dimmer modals page transition hidden">
+        <div class="ui modal scrolling transition hidden">
+            <i class="close icon"></i>
+
+            <!-- Form Thêm Mới -->
+
+            <!-- <div class="content"> -->
+            <div class="ui segments" style="margin-top: 0">
+                <div class="ui segment">
+                    <h2 class="ui header">Add New Personnel</h2>
+                </div>
+                <form class="ui form large segment" method="post" action="them.php">
+                    <!-- Mã định danh bị ẩn đi, không hiện lên trên Form -->
+                    <input type="hidden" name="id" value="" disabled="disabled" />
+
+                    <div class="fields">
+                        <div class="ui field inline">
+                            <label>Name</label>
+                            <input type="text" name="name" placeholder="Full Name" />
+                        </div>
+                        <div class="ui field inline">
+                            <label>Email</label>
+                            <input type="text" name="email" placeholder="fullname@gmail.com" />
+                        </div>
+                        <div class="ui field inline">
+                            <label>Country</label>
+                            <input type="text" name="country" placeholder="Country" />
+                        </div>
+                    </div>
+
+                    <div class="fields ui grid">
+                        <div class="ui field four wide column">
+                            <label style="text-align: center">Status</label>
+                            <select name="gender">
+                                <option value="1" selected="selected">Active</option>
+                                <option value="0">Inactive</option>
+                            </select>
+                        </div>
+
+                        <div class="ui field five wide column">
+                            <label style="text-align: center">Role</label>
+                            <input type="text" name="role" placeholder="Role" />
+                        </div>
+
+                        <div class="ui field three wide column">
+                            <label style="text-align: center">Gender</label>
+                            <select name="gender">
+                                <option value="1" selected="selected">Male</option>
+                                <option value="0">Female</option>
+                            </select>
+                        </div>
+                        <div class="ui field four wide column" style="text-align: center">
+                            <label>Registration Date</label>
+                            <input type="date" name="registration_date" />
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <label>Image</label>
+                        <input type="text" name="image" />
+                    </div>
+
+                    <script>
+                        $(function () {
+                            $(".html-editor").summernote({
+                                // cần tùy chỉnh thì viết vào đây
+                                height: 150,
+                            });
+                        });
+                    </script>
+
+                    <div class="fields ui grid">
+                        <div class="field ui six wide column">
+                            <label>Login Name</label>
+                            <input type="text" name="login_name" placeholder="admin" />
+                        </div>
+                        <div class="field ui five wide column">
+                            <label>Password</label>
+                            <input type="password" name="password" value="" placeholder="Abcd@1234" />
+                        </div>
+
+                        <div class="field ui five wide column">
+                            <label>Confirm Password</label>
+                            <input type="password" name="comfirm_password" value="" placeholder="Abcd@1234" />
+                        </div>
+                    </div>
+
+                    <label for="">&nbsp;</label>
+                    <div style="overflow: auto">
+                        <button class="ui button" type="reset" style="float: right">
+                            <i class="x icon"></i>Cancel
+                        </button>
+                        <button class="ui button primary" type="submit" style="float: right">
+                            <i class="icon save"></i>Save
+                        </button>
+                        <a href="admin.html" class="ui button primary" style="float: right"><i
+                                class="icon list"></i>List</a>
+                    </div>
+                </form>
+            </div>
+            <!-- </div> -->
+        </div>
+    </div>
+</body>
+
+</html>

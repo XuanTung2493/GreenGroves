@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en"><!--Hay phải chạy Maven Compile để layout.html mới có hiệu lực-->
+<!-- xem thông tin -->
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>View</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+
+    <!-- Cài đặt thư viện jQuery Semantic UI -->
+    <link href="https://semantic-ui.com/dist/semantic.min.css" rel="stylesheet" />
+    <script src="https://semantic-ui.com/dist/semantic.min.js"></script>
+
+    <!-- Cài đặt thư viện jQuery Summernote độc lập, không phụ thuộc Bootstrap -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote-lite.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote-lite.js"></script>
+
+</head>
+
+<body>
+    <form style="border-radius: 20px;">
+        <h2 style="text-align: center;margin: 0;">
+            View Details
+        </h2>
+        <hr>
+        <p>
+            <label>Name</label>
+            <input type="text" name="Name">
+        </p>
+        <p>
+            <label>Country</label>
+            <input type="text" name="counTry">
+        </p>
+        <p>
+            <label>Email</label>
+            <input type="text" name="eMail">
+        </p>
+        <p>
+            <label>Role</label>
+            <input type="text" name="Role">
+        </p>
+
+        <p>
+            <label>Gender</label>
+            <input type="radio" name="genDer" value="1"><span>Male</span>
+            <input type="radio" name="genDer" value="0"><span>Female</span>
+        </p>
+
+        <p>
+            <label>Image</label>
+            <input type="hidden" name="Image">
+            <img src="" style="height: 50px;" name="img" />
+        </p>
+
+        <p>
+            <label>Registration Date</label>
+            <input type="date" name="Date">
+        </p>
+
+        <label for="">&nbsp;</label>
+        <div style="overflow: auto;">
+            <button class="ui button" type="reset" style="float: right"><i class="x icon"></i>Cancel</button>
+            <button class="ui button primary" type="submit" style="float: right"><i class="icon save"></i>Save</button>
+            <a href="admin.html" class="ui button primary" style="float: right"><i class="icon list"></i>List</a>
+        </div>
+
+        <style>
+            form {
+                width: 40%;
+                margin: 0 auto;
+                box-shadow: 0 0 15px gray;
+                padding: 10px;
+                top: 100px;
+                position: relative;
+            }
+
+
+            input {
+                border-radius: 4px;
+            }
+
+            label {
+                width: 8em;
+                display: inline-block;
+            }
+
+
+            button {
+                padding: 5px;
+                border-radius: 5px;
+            }
+        </style>
+
+        <script>
+            f = document.querySelector('form');
+
+            // Khởi tạo một đối tượng JavaScript
+            // có thuộc tính trùng khớp 1-1 với name của các phần
+            // tử trên form
+            var user = {
+                Name: "David Lam Thanh",
+                counTry: "VietNam",
+                eMail: "davidlthanh@gmail.com",
+                Role: "Admin",
+                genDer: 1,
+                Image: "img/avatar-admin8.jpg",
+                Date: "2024-03-23"  // system datetime
+            };
+
+            f.img.src = user.Image;
+
+            // Dùng lặp for
+            // duyệt từng phần tử trên form
+            // lấy dữ liệu của đối tượng JS6 và gán sang.
+            for (feature in user) {
+                f[feature].value = user[feature];
+            }
+            // đó chính là kỹ thuật: ràng buộc JS6 Object vào HTM5 Form
+            // Để giảm bớt sự phụ thuộc vào ngôn ngữ lập trình web phía
+            // backend trong quá trình xuất dữ liệu từ DB sang HTML
+        </script>
+    </form>
+</body>
